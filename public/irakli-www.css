@@ -65,14 +65,14 @@ hr {
 }
 
 .social_icon.fa.fa-twitter {
-  padding: 0rem .5rem;
+  padding: 0rem .25rem;
 }
 .social_icon.fa.fa-twitter:hover {
 	color: #268bd2;
 }
 
 .social_icon.fa.fa-github {
-  padding: 0rem .5rem;
+  padding: 0rem .25rem;
 }
 .social_icon.fa.fa-github:hover {
 	color: #268bd2;
