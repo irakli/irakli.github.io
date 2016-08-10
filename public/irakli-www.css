@@ -35,8 +35,6 @@ h1, h2, h3 {
   color: #fff;
 }
 
-.header {
-}
 .header-title {
   display: inline-block;
   padding: .5rem 1.5rem;
@@ -66,14 +64,16 @@ hr {
   margin-top: 1rem;
 }
 
+.social_icon.fa.fa-twitter {
+  padding: 0rem 0.25rem;
+}
 .social_icon.fa.fa-twitter:hover {
 	color: #268bd2;
 }
 
-.social_icon.fa.fa-github:hover {
-	color: #268bd2;
+.social_icon.fa.fa-github {
+  padding: 0rem 0.25rem;
 }
-
-.social_icon.fa.fa-linkedin:hover {
+.social_icon.fa.fa-github:hover {
 	color: #268bd2;
 }
