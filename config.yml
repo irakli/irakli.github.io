@@ -13,7 +13,7 @@ params:
   # startxLocation: https://example.com
   # useLess: true
   exitLocation: "about:blank"
-  source: false
+  # source: false
   greeting: |
     Type 'help' for a list of available commands
 
