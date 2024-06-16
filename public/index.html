@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w2.org/1999/xhtml">
+<html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.127.0">
+            <meta charset="utf-8" />
+    <title>Irakli Chkuaseli </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Irakli Chkuaseli">
+    <meta property="og:title" content="Irakli Chkuaseli" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://irak.li/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
+    <link rel="canonical" href="https://irak.li/" />    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.42.0/js/jquery.terminal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/less.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/autocomplete_menu.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.42.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            width: 100%;
+            font-size: 18px;
+        }
+    </style>
+    
+
+    </head>
+        <body>
+        
+<script> 
+jQuery(document).ready(function($) {
+    var animation = false;
+
+    var commands = {
+        help: "shows help",
+        less: "use less as output method",
+        whois: "list basic details",
+        social: "list social networks",
+        work: "list work experience",
+        education: "list education",
+        
+        
+        languages: "list spoken languages",
+        projects: "list projects",
+        
+        
+        
+        
+            source: "shows details about template powering this website",
+        
+        
+        
+            exit: "exit the terminal",
+        
+        all: "show all details",
+    };
+
+    function progressBar(number) {
+        var barLength = Math.round(number / 10);
+        var barFilled = Array(barLength + 1).join("&#9611;");
+        var barBlank= Array(11 - barLength).join("&#9617;");
+
+        return barFilled + barBlank
+    }
+
+    
+    function padKey(key, length) {
+        return key + ' '.repeat(length - key.length);
+    }
+
+    function commandsHelp() {
+        let longestKeyLength = Math.max(...Object.keys(commands).map(key => key.length));
+
+        let helpText = ""
+        for (let key in commands) {
+            if (commands.hasOwnProperty(key)) {
+                helpText += ` ${padKey(key, longestKeyLength)}\t${commands[key]}\n`
+            }
+        }
+        return helpText
+    }
+
+    var help = '\n[[b;white;]usage:]\n' +
+                '\n <command> - execute the command\n' +
+                ' less <command> - use less to display the output\n\n' +
+                '\n[[b;white;]Available commands:]\n' + 
+               commandsHelp();
+
+    var whois = [
+     
+        '[[b;grey;]Name:]\t\t\tIrakli Chkuaseli\n' + 
+        '[[b;grey;]Profession:]\t\tGame Developer\n' +
+        '[[b;grey;]Location:]\t\tTbilisi, Georgia\n' +
+        
+        
+        '[[b;grey;]Homepage:]\t\thttps:\/\/irak.li\n' +
+        
+        
+        '\nI\u0027m a game developer with a passion for creating interactive experiences.\n' +
+        
+        '\r',
+    
+    ];
+
+    function social() { 
+        var hideName = false;
+        let sMap = { 
+             
+                
+                "github": "https:\/\/github.com\/irakli",
+                
+                "linkedin": "https:\/\/linkedin.com\/in\/iraklichkuaseli",
+                
+            
+        };
+
+        
+        socialText = []
+        for (let key in sMap) {
+            if (sMap.hasOwnProperty(key)) {
+                if (hideName) {
+                    socialText.push(sMap[key]);
+                } else { 
+                    let longestKeyLength = Math.max(...Object.keys(sMap).map(key => key.length));
+                    socialText.push(`${padKey(key, longestKeyLength)}\t${sMap[key]}`)
+                };
+            }
+        }
+
+        return socialText
+    }
+
+    var certifications = [
+    
+    ];
+    
+    var work = [
+    
+        
+            '---\n' +
+            '[[b;gold;]Lead Unity Developer]\n' +
+            'Golden Fox\n' +
+            'Tbilisi, Georgia\n' +
+            'November 2019 - Present\n' +
+            '\n' +
+            'Led the design and development of a comprehensive 3D action game\u0027s code architecture.\nManaged a cross-functional team to deliver high-quality mobile and web games.\nDeveloped a robust character creation and customization system.\n' +
+            '\r',
+        
+            '---\n' +
+            '[[b;red;]Senior Unity Developer]\n' +
+            'Qene Games\n' +
+            'Tbilisi, Georgia\n' +
+            'May 2023 - Present\n' +
+            '\n' +
+            'Architected and implemented the core code structure for an upcoming game using Zenject.\nDeveloped multiple mini-games, enhancing user engagement and retention.\nDesigned and integrated the game backend using Firebase.\n' +
+            '\r',
+        
+            '---\n' +
+            '[[b;blue;]Senior Unity Developer]\n' +
+            'Toptal\n' +
+            'Remote\n' +
+            'February 2022 - Present\n' +
+            '\n' +
+            'Developed a custom physics-based character controller and adapted an open-source ability system for a 2D side-scroller game.\nCreated a realistic audio occlusion system and a modular user interface system.\n' +
+            '\r',
+        
+            '---\n' +
+            '[[b;green;]Senior Unity Developer]\n' +
+            'Matchday\n' +
+            'Remote\n' +
+            'February 2023 - May 2023\n' +
+            '\n' +
+            'Developed multiple NFT game prototypes and engineered reusable game services.\n' +
+            '\r',
+        
+            '---\n' +
+            '[[b;yellow;]Senior Unity Developer]\n' +
+            'Sleepagotchi\n' +
+            'Remote\n' +
+            'September 2022 - November 2022\n' +
+            '\n' +
+            'Designed and implemented a 3D real-time rendering solution in Unity, optimized for mobile devices.\nDeveloped a dynamic 3D room rendering system and implemented advanced volumetric lighting.\n' +
+            '\r',
+        
+            '---\n' +
+            '[[b;cyan;].NET Developer]\n' +
+            'Champions Academy\n' +
+            'Tbilisi, Georgia\n' +
+            'April 2020 - December 2021\n' +
+            '\n' +
+            'Designed and developed an internal gym management system.\nIntegrated existing gym hardware for seamless member access and created a comprehensive data analytics tool.\n' +
+            '\r',
+        
+            '---\n' +
+            '[[b;magenta;]Unity Developer]\n' +
+            'Golden Fox\n' +
+            'Tbilisi, Georgia\n' +
+            'November 2018 - November 2019\n' +
+            '\n' +
+            'Implemented core gameplay mechanics for a 2D fighting game.\nDeveloped leaderboards, statistics, and achievements.\nDesigned and created the game\u0027s UI with animations, sounds, and haptic feedback.\n' +
+            '\r',
+        
+    
+    ];
+
+    var education = [
+    
+        
+            '---\n' +
+            '[[b;purple;]Master of Science in Computer Science]\n' +
+            'September 2021 - December 2023\n' +
+            
+            "\r",
+        
+            '---\n' +
+            '[[b;yellow;]Bachelor of Science in Computer Science]\n' +
+            'September 2014 - July 2018\n' +
+            
+            "\r",
+        
+    
+    ];
+
+    var projects = [
+    
+        
+            '---\n' +
+            '[[b;red;]Guns and Fury]\n' +
+            '\n' +
+            'https:\/\/apps.apple.com\/us\/app\/guns-fury\/id1589304660\n' +
+            
+            'A fast-paced, action-packed mobile game with various weapons, challenging levels, endless zombie mode, and boss battles.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;blue;]Beemi]\n' +
+            '\n' +
+            'https:\/\/beemi.app\/\n' +
+            
+            'A collection of interactive mini-games designed to enhance livestreaming experiences and actively engage audiences.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;green;]Sleepagotchi]\n' +
+            '\n' +
+            'https:\/\/apps.apple.com\/app\/sleepagotchi-sleep-tracker\/id1619708062\n' +
+            
+            'An application to help achieve a consistent sleep schedule with rewards through collectible items and tokens.\n\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;yellow;]Battle for Basiani]\n' +
+            '\n' +
+            'https:\/\/apps.apple.com\/us\/app\/battle-for-basiani\/id1495060685\n' +
+            
+            'An action-packed 2D beat \u0027em up mobile game with unique abilities and talents for each opponent.\n\n' +
+            
+            "\r",
+      
+    
+    ];
+
+    var skills = [
+    
+    ];
+
+    var softSkills = [
+    
+    ];
+  
+    var languages = [
+    
+        
+            '[[b;Blue;]English:]\n' +
+            progressBar( 100 )+ 
+            '100' + '%\n' +
+            
+            'Fluent\n' +
+            
+            '\r',
+        
+            '[[b;Red;]Georgian:]\n' +
+            progressBar( 100 )+ 
+            '100' + '%\n' +
+            
+            'Native\n' +
+            
+            '\r',
+        
+            '[[b;yellow;]Spanish:]\n' +
+            progressBar( 70 )+ 
+            '70' + '%\n' +
+            
+            'Intermediate\n' +
+            
+            '\r',
+        
+    
+    ];
+
+    var misc = [
+         
+    ];
+
+    var source =  '        _______            \n' +
+                  '       |       |           \n' +
+                  '       |       |           \n' +
+                  '       |_______|_______    \n' +
+                  '               |       |   \n' +
+                  '               |       |   \n' +
+                  ' ______________|_______|   \n' +
+                  '|      |       |       |   \n' +
+                  '|      |       |       |   \n' +
+                  '|______|_______|_______|   \n' +
+                  '[[;red;]May the source be with you]\n' +
+                  '[[;grey;]https://github.com/coolapso/hugo-theme-terminalcv\n';
+
+    var all = [ 
+        whois,
+        social(),
+        work,
+        education,
+        skills,
+        softSkills,
+        languages,
+        projects,
+        certifications,
+        misc,
+        
+        
+    ]
+
+    $('body').terminal(function(command, term) {
+
+        var useLess = false;
+        
+
+        function echoArray(array) {
+            if (useLess) {
+                term.less(array);
+            } else {
+                for (i = 0; i < array.length; i += 1) {
+                    term.echo(array[i]);
+                }
+            }
+        }
+        
+        function progress(percent, width) {
+            var size = Math.round(width*percent/100);
+            var left = '', taken = '', i;
+            for (i=size; i--;) {
+                taken += '=';
+            }
+            if (taken.length > 0) {
+                taken = taken.replace(/=$/, '>');
+            }
+            for (i=width-size; i--;) {
+                left += ' ';
+            }
+            return '[' + taken + left + '] ' + percent + '%';
+        }
+
+        function loading () {
+            var i = 0, size = 30;
+            prompt = term.get_prompt();
+            string = progress(0, size);
+            term.set_prompt(progress);
+            animation = true;
+            (function loop() {
+                string = progress(i++, size);
+                term.set_prompt(string);
+                if (i < 100) {
+                    timer = setTimeout(loop, 10);
+                } else {
+                    term.echo(progress(i, size) + ' [[b;green;]OK]').set_prompt(prompt);
+                    animation = false
+                }
+            })();
+        }
+
+        commands = command.split(/[ ]+/);
+        if (commands[0] == 'less') {
+            useLess = true;
+            commands.shift();
+        } 
+                    
+        switch(commands[0]) {
+            case 'whois':
+                
+                echoArray(whois);
+                break;
+            case 'social':
+                
+                echoArray(social());
+                break;
+            case 'work':
+                
+                useLess = true;
+                
+                echoArray(work);
+                break;
+            case 'education':
+                
+                echoArray(education);
+                break;
+            case 'skills':
+                
+                echoArray(skills);
+                break;
+            case 'softskills':
+                
+                echoArray(softSkills);
+                break;
+            case 'languages':
+                
+                echoArray(languages);
+                break;
+            case 'projects':
+                
+                echoArray(projects);
+                break;
+            case 'certifications':
+                
+                term.echo(certifications);
+                break;
+            case 'misc':
+                
+                echoArray(misc);
+                break;
+            case 'help':
+            case '?':
+                term.echo(help);
+                break;
+            case 'all':
+                
+                echoArray(all.flat(1));
+                break;
+            
+            case ':(){:|:&};:':
+                term.echo("nice try");
+                break;
+            case 'source':
+                
+                term.echo(source);
+                break;
+            
+            case 'exit':
+                term.echo("terminating ... ")
+                loading();
+                setTimeout(function(){window.location = 'about:blank'}, 2000);
+                break;
+            
+            
+            case '':
+                break;
+            default:
+                term.echo("\nunknown command: " + command + "\n" +
+                          "please type 'help' or '?' for a list of available commands\n");
+        }
+    }, {
+        prompt: '[[;orange;]irakli@here][[;grey;]:~$]' + " ",
+        greetings: "[[b;white;]Type \u0027help\u0027 for a list of available commands\n]",
+
+        keydown: function(e, term) {
+            if (animation) {
+                if (e.which == 68 && e.ctrlKey) { 
+                    clearTimeout(timer);
+                    animation = false;
+                    term.echo(string + ' [[b;red;]FAIL]')
+                    .set_prompt(prompt);
+                }
+                return false;
+            }
+        },
+        autocompleteMenu: true,
+        completion: Object.keys(commands)
+        
+    });
+});
+</script>
+
+        </body>
+</html>
